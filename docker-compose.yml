@@ -1,0 +1,17 @@
+version: "2"
+services:
+  jupyterlab:
+    build:
+      context: .
+    user: root
+    ports:
+      - "80:8888"
+    volumes:
+      - "./src:/home/jovyan/work" # ← notebookをホストと共有したいためディレクトリをマウント
+    environment:
+      NB_UID: 500 # ← 作業するユーザーのUID 私の環境では500だったので500を指定
+      GRANT_SUDO: "yes"
+    command: start.sh jupyter lab --NotebookApp.token=''
+    environment:
+      - DISPLAY=host.docker.internal:0.0
+    
