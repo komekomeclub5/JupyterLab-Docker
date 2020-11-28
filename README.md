@@ -32,3 +32,22 @@ docker-compose down
 ```
 
 で終了です。
+
+## 追記
+
+Windowsの人はdocker-compose.ymlの
+
+```
+environment:
+      - DISPLAY=host.docker.internal:0.0
+```
+
+から
+
+
+```
+environment:
+      - DISPLAY=自分のPCのIPアドレス:0.0
+```
+
+に変更しないと動かないかも
