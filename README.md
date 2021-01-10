@@ -1,5 +1,6 @@
 # JupyterLab-Docker
 
+講義用
 
 ## 事前準備
 
